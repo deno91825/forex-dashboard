@@ -105,6 +105,32 @@ footer {
 
 }
 
+/* Search Section */
+
+.search-box {
+
+    display: flex;
+
+    gap: 1rem;
+
+    flex-wrap: wrap;
+
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+
+#search-results {
+    margin-top: 1rem;
+
+}
+
 
 /* Mobile Design */
 
