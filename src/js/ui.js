@@ -70,3 +70,26 @@ export function renderNews(news) {
         .join("");
 
 }
+
+export function renderExchangeRates(rates) {
+
+    const container = document.querySelector(".market-container");
+
+    const currencies = ["USD", "EUR", "GBP", "UGX", "KES", "TZS"];
+
+    container.innerHTML = "";
+
+    currencies.forEach(currency => {
+
+        const card = `
+            <div class="rate-card">
+                <h3>${currency}</h3>
+                <p>${rates[currency]}</p>
+            </div>
+        `;
+
+        container.innerHTML += card;
+
+    });
+
+}

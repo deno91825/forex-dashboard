@@ -1,23 +1,49 @@
-import { getExchangeRates, getFinancialNews } from "./api.js";
+import { getExchangeRates } from "./api.js";
 import { displayMessage } from "./ui.js";
 import { getFavorites } from "./storage.js";
-import { renderFavorites } from "./ui.js";
+import { renderFavorites,renderExchangeRates } from "./ui.js";
 
 function setupSearch() {
+
     const button = document.querySelector("#search-button");
 
-    button.addEventListener("click", () => {
-        const currency = document.querySelector("#currency-search").value;
+    button.addEventListener("click", async () => {
 
-        console.log("Searching for:", currency);
+        const currency = document
+            .querySelector("#currency-search")
+            .value
+            .trim()
+            .toUpperCase();
+
+        if (!currency) {
+
+            alert("Please enter a currency code.");
+
+            return;
+
+        }
+
+        const data = await getExchangeRates(currency);
+
+        if (data) {
+
+            renderExchangeRates(data.conversion_rates);
+
+        }
+
     });
+
 }
 
 function init() {
     console.log("Forex Dashboard Started");
 
-    getExchangeRates();
-    getFinancialNews();
+    getExchangeRates("USD")
+        .then(data => {
+
+            renderExchangeRates(data.conversion_rates);
+
+        });
 
     const favorites = getFavorites();
 

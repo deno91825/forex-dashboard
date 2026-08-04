@@ -191,6 +191,26 @@ footer {
 
 }
 
+/* Exchange Rate Cards */
+
+.rate-card {
+    background-color: #f4f7fb;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+
+.rate-card h3 {
+    margin-top: 0;
+    color: #1d3557;
+}
+
+.rate-card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 
 /* Mobile Design */
 
