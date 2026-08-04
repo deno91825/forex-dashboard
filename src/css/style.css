@@ -150,6 +150,22 @@ footer {
     margin-top: 1rem;
 }
 
+/* Favorites Section */
+
+#favorites-list {
+    display: grid;
+    gap: 1rem;
+}
+
+
+.favorite-item {
+    background-color: #f4f7fb;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
 
 /* Mobile Design */
 

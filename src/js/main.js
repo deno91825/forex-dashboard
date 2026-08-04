@@ -1,6 +1,7 @@
 import { getExchangeRates, getFinancialNews } from "./api.js";
 import { displayMessage } from "./ui.js";
 import { getFavorites } from "./storage.js";
+import { renderFavorites } from "./ui.js";
 
 function setupSearch() {
     const button = document.querySelector("#search-button");
@@ -21,6 +22,8 @@ function init() {
     const favorites = getFavorites();
 
     displayMessage(`Saved favorites: ${favorites.length}`);
+
+    renderFavorites(favorites);
 
     setupSearch();
     setupConverter();
