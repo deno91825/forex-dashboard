@@ -41,3 +41,18 @@ export function getFavorites() {
     ) || [];
 
 }
+
+export function removeFavorite(currency) {
+
+    let favorites = getFavorites();
+
+    favorites = favorites.filter(
+        item => item !== currency
+    );
+
+    localStorage.setItem(
+        "favorites",
+        JSON.stringify(favorites)
+    );
+
+}

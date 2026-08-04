@@ -1,6 +1,6 @@
 import { getExchangeRates } from "./api.js";
 import { displayMessage } from "./ui.js";
-import { getFavorites } from "./storage.js";
+import { getFavorites, saveFavorite } from "./storage.js";
 import { renderFavorites,renderExchangeRates } from "./ui.js";
 
 function setupSearch() {
@@ -53,20 +53,92 @@ function init() {
 
     setupSearch();
     setupConverter();
+    setupFavorites();
 }
 
-function setupConverter() {
+async function setupConverter() {
+
     const button = document.querySelector("#convert-button");
 
-    button.addEventListener("click", () => {
-        const amount = document.querySelector("#amount").value;
+    button.addEventListener("click", async () => {
+
+        const amount = Number(
+            document.querySelector("#amount").value
+        );
+
         const from = document.querySelector("#from-currency").value;
+
         const to = document.querySelector("#to-currency").value;
 
-        console.log(
-            `Convert ${amount} ${from} to ${to}`
-        );
+
+        const data = await getExchangeRates(from);
+
+
+        if (!data) {
+
+            return;
+
+        }
+
+
+        const rate = data.conversion_rates[to];
+
+
+        const result = amount * rate;
+
+
+        document.querySelector("#conversion-result")
+            .innerHTML = `
+                <h3>
+                    Result
+                </h3>
+
+                <p>
+                    ${amount} ${from} =
+                    ${result.toFixed(2)} ${to}
+                </p>
+            `;
+
     });
+
+}
+
+function setupFavorites() {
+
+    const button = document.querySelector("#favorite-button");
+
+
+    button.addEventListener("click", () => {
+
+        const currency = document
+            .querySelector("#currency-search")
+            .value
+            .trim()
+            .toUpperCase();
+
+
+        if (!currency) {
+
+            alert("Enter a currency first.");
+
+            return;
+
+        }
+
+
+        saveFavorite(currency);
+
+
+        const favorites = getFavorites();
+
+
+        renderFavorites(favorites);
+
+
+        alert(`${currency} saved`);
+
+    });
+
 }
 
 init();
