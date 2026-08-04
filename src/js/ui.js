@@ -21,7 +21,7 @@ export function renderFavorites(favorites) {
     if (!favorites.length) {
 
         container.innerHTML =
-        "<p>No favorite currencies saved.</p>";
+        "<p>No favorites saved.</p>";
 
         return;
 
@@ -30,9 +30,22 @@ export function renderFavorites(favorites) {
 
     container.innerHTML = favorites
         .map(currency => `
-            <div class="favorite-item">
-                <span>${currency}</span>
+
+            <div class="favorite-card">
+
+                <span>
+                    ${currency}
+                </span>
+
+
+                <button 
+                    class="remove-favorite"
+                    data-currency="${currency}">
+                    Remove
+                </button>
+
             </div>
+
         `)
         .join("");
 

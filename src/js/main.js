@@ -1,10 +1,10 @@
 import { getExchangeRates } from "./api.js";
 import { displayMessage } from "./ui.js";
-import { getFavorites, saveFavorite } from "./storage.js";
+import { getFavorites, saveFavorite, removeFavorite } from "./storage.js";
 import { renderFavorites,renderExchangeRates } from "./ui.js";
 
 function setupSearch() {
-
+removeFavorite
     const button = document.querySelector("#search-button");
 
     button.addEventListener("click", async () => {
@@ -54,6 +54,7 @@ function init() {
     setupSearch();
     setupConverter();
     setupFavorites();
+    setupRemoveFavorites();
 }
 
 async function setupConverter() {
@@ -136,6 +137,39 @@ function setupFavorites() {
 
 
         alert(`${currency} saved`);
+
+    });
+
+}
+
+function setupRemoveFavorites() {
+
+
+    document
+    .querySelector("#favorites-list")
+    .addEventListener("click", event => {
+
+
+        if (
+            event.target.classList.contains(
+                "remove-favorite"
+            )
+        ) {
+
+
+            const currency =
+            event.target.dataset.currency;
+
+
+            removeFavorite(currency);
+
+
+            renderFavorites(
+                getFavorites()
+            );
+
+        }
+
 
     });
 

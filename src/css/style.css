@@ -211,6 +211,21 @@ footer {
     font-weight: bold;
 }
 
+/* Favorites */
+.favorite-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background-color: #f4f7fb;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+}
+
+.favorite-card button {
+    background-color: #e63946;
+}
+
 
 /* Mobile Design */
 

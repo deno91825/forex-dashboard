@@ -14,9 +14,7 @@ export function saveFavorites(favorites) {
 
 export function saveFavorite(currency) {
 
-    let favorites = JSON.parse(
-        localStorage.getItem("favorites")
-    ) || [];
+    let favorites = getFavorites();
 
 
     if (!favorites.includes(currency)) {
