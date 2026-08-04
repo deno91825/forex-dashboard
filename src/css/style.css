@@ -131,6 +131,25 @@ footer {
 
 }
 
+/* Converter Section */
+
+.converter-box {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.converter-box input,
+.converter-box select {
+    padding: 0.7rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#conversion-result {
+    margin-top: 1rem;
+}
+
 
 /* Mobile Design */
 

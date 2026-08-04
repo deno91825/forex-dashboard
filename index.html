@@ -111,15 +111,53 @@
     </section>
 
 
-    <section id="converter">
+<section id="converter">
 
-        <h2>Currency Converter</h2>
+    <h2>Currency Converter</h2>
+
+    <div class="converter-box">
+
+        <input 
+            type="number"
+            id="amount"
+            placeholder="Enter amount"
+        >
+
+
+        <select id="from-currency">
+
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+
+        </select>
+
+
+        <select id="to-currency">
+
+            <option value="UGX">UGX</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+
+        </select>
+
+
+        <button id="convert-button">
+            Convert
+        </button>
+
+    </div>
+
+
+    <div id="conversion-result">
 
         <p>
-            Convert currencies here.
+            Conversion result will appear here.
         </p>
 
-    </section>
+    </div>
+
+</section>
 
 
     <section id="favorites">

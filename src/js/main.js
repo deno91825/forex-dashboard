@@ -23,6 +23,21 @@ function init() {
     displayMessage(`Saved favorites: ${favorites.length}`);
 
     setupSearch();
+    setupConverter();
+}
+
+function setupConverter() {
+    const button = document.querySelector("#convert-button");
+
+    button.addEventListener("click", () => {
+        const amount = document.querySelector("#amount").value;
+        const from = document.querySelector("#from-currency").value;
+        const to = document.querySelector("#to-currency").value;
+
+        console.log(
+            `Convert ${amount} ${from} to ${to}`
+        );
+    });
 }
 
 init();
