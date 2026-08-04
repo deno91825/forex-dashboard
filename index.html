@@ -14,23 +14,123 @@
 
 <body>
 
-    <header>
+<header class="site-header">
+
+    <div class="logo">
         <h1>Forex Dashboard</h1>
-    </header>
+    </div>
 
 
-    <main>
+    <nav class="navigation">
 
-        <section id="dashboard">
-            <h2>Financial Market Dashboard</h2>
+        <ul>
+
+            <li>
+                <a href="#dashboard">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="#markets">Markets</a>
+            </li>
+
+            <li>
+                <a href="#converter">Converter</a>
+            </li>
+
+            <li>
+                <a href="#favorites">Favorites</a>
+            </li>
+
+            <li>
+                <a href="#news">News</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section id="dashboard">
+
+        <h2>Financial Market Dashboard</h2>
+
+        <p>
+            Track currency exchange rates and financial news.
+        </p>
+
+    </section>
+
+
+    <section id="search">
+
+        <h2>Currency Search</h2>
+
+        <input 
+            type="text" 
+            id="currency-search"
+            placeholder="Search currency..."
+        >
+
+        <button>
+            Search
+        </button>
+
+    </section>
+
+
+    <section id="markets">
+
+        <h2>Market Overview</h2>
+
+        <div class="market-container">
 
             <p>
-                Track currency exchange rates and financial news.
+                Exchange rates will appear here.
             </p>
-        </section>
+
+        </div>
+
+    </section>
 
 
-    </main>
+    <section id="converter">
+
+        <h2>Currency Converter</h2>
+
+        <p>
+            Convert currencies here.
+        </p>
+
+    </section>
+
+
+    <section id="favorites">
+
+        <h2>Favorite Currencies</h2>
+
+        <p>
+            Saved currencies will appear here.
+        </p>
+
+    </section>
+
+
+    <section id="news">
+
+        <h2>Financial News</h2>
+
+        <p>
+            Financial articles will appear here.
+        </p>
+
+    </section>
+
+
+</main>
 
 
     <footer>
