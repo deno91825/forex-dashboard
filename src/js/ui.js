@@ -37,3 +37,36 @@ export function renderFavorites(favorites) {
         .join("");
 
 }
+
+export function renderNews(news) {
+
+    const container = document.querySelector("#news-list");
+
+
+    if (!news.length) {
+
+        container.innerHTML =
+        "<p>No news available.</p>";
+
+        return;
+
+    }
+
+
+    container.innerHTML = news
+        .map(article => `
+            <article class="news-card">
+
+                <h3>
+                    ${article.title}
+                </h3>
+
+                <p>
+                    ${article.description || ""}
+                </p>
+
+            </article>
+        `)
+        .join("");
+
+}

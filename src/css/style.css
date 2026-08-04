@@ -166,6 +166,31 @@ footer {
     justify-content: space-between;
 }
 
+/* News Section */
+
+#news-list {
+    display: grid;
+    gap: 1rem;
+}
+
+
+.news-card {
+
+    background-color: #f4f7fb;
+
+    padding: 1rem;
+
+    border-radius: 8px;
+
+}
+
+
+.news-card h3 {
+
+    margin-top: 0;
+
+}
+
 
 /* Mobile Design */
 
